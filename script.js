@@ -1,5 +1,3 @@
-let playerOutput = document.querySelector(".userChoice")
-let cpuOutput = document.querySelector(".computerChoice")
 let resultOutput = document.querySelector(".winnerMessage")
 let playerScore = document.querySelector(".playerScore")
 let cpuScore = document.querySelector(".cpuScore")

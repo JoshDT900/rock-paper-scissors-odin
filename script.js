@@ -8,13 +8,10 @@ let playerOutput = document.querySelector(".userChoice")
 let cpuOutput = document.querySelector(".computerChoice")
 let resultOutput = document.querySelector(".winnerMessage")
 
-playerOutput.textContent = `The player chose ${userChoice}`
-cpuOutput.textContent = `The compyter chose ${cpuChoice}`
-
 function rockPaperScissors(userChoice, cpuChoice) {
 
   if (userChoice != "rock" && userChoice != "paper" && userChoice != "scissors") {
-    return alert("Invalid choice, please pick rock, paper, or scissors");
+    return resultOutput.textContent = "Invalid choice, please pick rock, paper, or scissors.";
   }
 
   if (userChoice === cpuChoice) {
@@ -26,4 +23,6 @@ function rockPaperScissors(userChoice, cpuChoice) {
   }
 }
 
+playerOutput.textContent = `The player chose ${userChoice}`
+cpuOutput.textContent = `The compyter chose ${cpuChoice}`
 resultOutput.textContent = `The results is: ${rockPaperScissors(userChoice, cpuChoice)}`

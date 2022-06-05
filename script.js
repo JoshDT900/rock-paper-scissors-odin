@@ -8,7 +8,7 @@ let playerOutput = document.querySelector(".userChoice")
 let cpuOutput = document.querySelector(".computerChoice")
 let resultOutput = document.querySelector(".winnerMessage")
 
-function rockPaperScissors(userChoice, cpuChoice) {
+function computerPlay(userChoice, cpuChoice) {
 
   if (userChoice != "rock" && userChoice != "paper" && userChoice != "scissors") {
     return resultOutput.textContent = "Invalid choice, please pick rock, paper, or scissors.";
@@ -25,4 +25,4 @@ function rockPaperScissors(userChoice, cpuChoice) {
 
 playerOutput.textContent = `The player chose ${userChoice}`
 cpuOutput.textContent = `The compyter chose ${cpuChoice}`
-resultOutput.textContent = `The results is: ${rockPaperScissors(userChoice, cpuChoice)}`
+resultOutput.textContent = `The results is: ${computerPlay(userChoice, cpuChoice)}`

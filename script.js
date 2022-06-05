@@ -4,9 +4,16 @@ let cpuChoice = ["rock", "paper", "scissors"]
 cpuChoice = cpuChoice[Math.floor(Math.random() * 3)]
 userChoice = userChoice.toLowerCase();
 
+let playerOutput = document.querySelector(".userChoice")
+let cpuOutput = document.querySelector(".computerChoice")
+let resultOutput = document.querySelector(".winnerMessage")
+
+document.get
+
+playerOutput.textContent = `The player chose ${userChoice}`
+cpuOutput.textContent = `The compyter chose ${cpuChoice}`
 
 function rockPaperScissors(userChoice, cpuChoice) {
-
 
   if (userChoice != "rock" && userChoice != "paper" && userChoice != "scissors") {
     return alert("Invalid choice, please pick rock, paper, or scissors");
@@ -21,4 +28,8 @@ function rockPaperScissors(userChoice, cpuChoice) {
   }
 }
 
-console.log(rockPaperScissors(userChoice, cpuChoice));
+
+
+// console.log(rockPaperScissors(userChoice, cpuChoice));
+
+resultOutput.textContent = `The results is: ${rockPaperScissors(userChoice, cpuChoice)}`

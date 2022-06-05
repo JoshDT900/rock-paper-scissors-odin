@@ -10,11 +10,7 @@ function computerPlay() {
 }
 
 function round(userChoice, cpuChoice) {  
-  userChoice = userChoice.toLowerCase();
-  
-  if (userChoice != "rock" && userChoice != "paper" && userChoice != "scissors") {
-    return resultOutput.textContent = "Invalid choice, please pick rock, paper, or scissors.";
-  }
+  userChoice = userChoice.toLowerCase();  
 
   if (userChoice === cpuChoice) {
     return "It's a tie!"
@@ -22,7 +18,11 @@ function round(userChoice, cpuChoice) {
     return "You win!"
   } else if (userChoice === "rock" && cpuChoice === "paper" || userChoice === "paper" && cpuChoice === "scissors") {
     return "You lose!";
+  } else {
+    return resultOutput.textContent = "Invalid choice, please pick rock, paper, or scissors.";
   }
+    
+  
 }
 
 function game() {

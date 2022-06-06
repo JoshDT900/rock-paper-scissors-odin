@@ -1,7 +1,18 @@
 let resultOutput = document.querySelector(".winnerMessage")
 let playerScore = document.querySelector(".playerScore")
 let cpuScore = document.querySelector(".cpuScore")
-let tiesScore = document.querySelector(".ties")
+let rockButton = document.getElementById("rockButton")
+let paperButton = document.getElementById("paperButton")
+let scissorsButton = document.getElementById("scissorsButton")
+let resetButton = document.querySelector(".resetButton")
+let mainButton = document.querySelector(".buttons-box")
+
+resetButton.style.display = 'none'
+
+let userChoice = "";
+
+let userScore = 0;
+let cpuScoreNum = 0;
 
 function computerPlay() {
   cpuChoice = ["rock", "paper", "scissors"]
@@ -9,61 +20,73 @@ function computerPlay() {
   return cpuChoice[Math.floor(Math.random() * 3)];
 }
 
-function round(userChoice, cpuChoice) {  
-  userChoice = userChoice.toLowerCase();  
+function chooseRock() {
+  userChoice = "rock"
+  return  userChoice;
+}
+
+function choosePaper() {
+  userChoice = "paper"
+  return userChoice;
+}
+
+function chooseScissors() {
+  userChoice = "scissors"
+  return userChoice;
+}
+
+rockButton.addEventListener("click", chooseRock);
+rockButton.addEventListener("click", round);
+rockButton.addEventListener("click", resetGame);
+
+paperButton.addEventListener("click", choosePaper)
+paperButton.addEventListener("click", round)
+paperButton.addEventListener("click", resetGame);
+
+scissorsButton.addEventListener("click", chooseScissors)
+scissorsButton.addEventListener("click", round);
+scissorsButton.addEventListener("click", resetGame);
+
+function round() {  
+  let cpuChoice = computerPlay();
+  
 
   if (userChoice === cpuChoice) {
-    return "It's a tie!"
-  } else if (userChoice === "rock" && cpuChoice === "scissors" || userChoice === "paper" && cpuChoice === "rock") {
-    return "You win!"
-  } else if (userChoice === "rock" && cpuChoice === "paper" || userChoice === "paper" && cpuChoice === "scissors") {
-    return "You lose!";
-  } else {
-    return resultOutput.textContent = "Invalid choice, please pick rock, paper, or scissors.";
-  }
-    
-  
-}
-
-function game() {
-  let cpuWins = 0;
-  let playerWins = 0;
-  let tiesNum = 0;
-
-  for (let i = 0; i < 5; i++) {
-    cpuChoice = computerPlay();
-    userChoice = window.prompt("Choose either Rock, Paper, or Scissors.") 
-    if (round(userChoice, cpuChoice) === "It's a tie!") {
-      tiesNum++      
-      resultOutput.textContent = "No one gets a point";
-      tiesScore.textContent = `Number of ties: ${tiesNum}`
-    } else if (round(userChoice, cpuChoice) === "You win!") {
-      playerWins++     
-      playerScore.textContent = `Player Score: ${playerWins}`;
-      cpuScore.textContent = `CPU Score: ${cpuWins}`
-    } else if (round(userChoice, cpuChoice) === "You lose!") {    
-      cpuWins++;
-      playerScore.textContent = `Player Score: ${playerWins}`
-      cpuScore.textContent = `CPU Score: ${cpuWins}`;
-    } else {
-      alert("Please choose either rock, paper, or scissors")
-      i--;
-    }
+    resultOutput.textContent = "It's a tie!"
+  } else if (userChoice === "rock" && cpuChoice === "scissors" || userChoice === "paper" && cpuChoice === "rock" || userChoice === "scissors" && cpuChoice === "paper") {
+    userScore ++;
+    playerScore.textContent = `Score: ${userScore}`;
+    resultOutput.textContent = "You win!"
+  } else if (userChoice === "rock" && cpuChoice === "paper" || userChoice === "paper" && cpuChoice === "scissors" || userChoice === "scissors" && cpuChoice === "rock") {
+    cpuScoreNum ++;
+    cpuScore.textContent = `Score: ${cpuScoreNum}`;
+    resultOutput.textContent = "You lose!";
   }
 
-  if (cpuWins < playerWins) {
-    return resultOutput.textContent = `The results is: You win!`
-  } else if (cpuWins === playerWins) {
-    return resultOutput.textContent = `The results is: It's a tie!`
-  } else {
-    return resultOutput.textContent = `The results is: You lose!`
+  if (cpuScoreNum === 5) {    
+    resultOutput.textContent = `The CPU has bested you! LOSER!`;
+  } else if (userScore === 5) {      
+    resultOutput.textContent = `You have stopped Skynet from taking over... for now.`;
   }
 }
 
-game();
+function resetGame() {
+  if (cpuScoreNum === 5 || userScore === 5) {
+    resetButton.style.display = '';
+    mainButton.style.display = 'none';
+  }
+}
 
+resetButton.addEventListener("click", resetValues)
 
-
-
-
+function resetValues() {
+      cpuScoreNum = 0;
+      cpuScore.textContent = `Score: ${cpuScoreNum}`;
+      userScore = 0;
+      playerScore.textContent = `Score: ${userScore}`;
+      resetButton.style.display = 'none'
+      mainButton.style.display = '';
+      resultOutput.textContent = "First to 5 wins. Can you beat the computer?";
+      return;
+}
 

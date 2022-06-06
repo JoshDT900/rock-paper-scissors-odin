@@ -1,0 +1,100 @@
+@font-face {
+  font-family: 'Orbitron';
+  src: url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+}
+
+* {
+  font-family: 'Orbitron', 'Courier New', Courier, monospace;
+  padding: 0px;
+  margin: 0px;
+  background-color: azure;
+}
+
+.body {
+  display: flex;
+}
+
+.title-box {
+  display: flex;
+  justify-content: center;
+  font-size: 32px;
+  background-color: rgb(101, 122, 241);
+  padding: 30px;
+  border-bottom: 4px solid black;
+}
+
+.title-box .title-rps {
+  background-color: rgb(101, 122, 241);
+}
+
+.scores-box {
+  display: flex;
+  justify-content: center;
+  gap: 300px;
+  margin-top: 40px;  
+}
+
+.player,
+.computer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  width: 200px;
+}
+
+.player h2,
+.computer h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.buttons-box {
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+  margin-top: 150px;
+}
+
+.buttons-box .button button {
+  border-style: none;
+}
+
+.buttons-box .button img:hover {
+  background-color: rgb(145, 148, 148);  
+}
+
+.buttons-box .button img {
+  width: 200px;
+  height: 200px;
+  background-color: rgb(51, 51, 51);
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+.winner-box {
+  display: flex;
+  justify-content: center;
+  padding: 100px;
+  font-size: 40px;
+}
+
+.reset-box {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  padding: 20px;
+}
+
+.reset-box .resetButton {
+  height: 75px;
+  width: 250px;
+  font-size: 24px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+.reset-box .resetButton:hover {
+  background-color: grey;
+  color: white;
+}

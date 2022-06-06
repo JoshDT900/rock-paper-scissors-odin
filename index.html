@@ -1,19 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Rock Paper Scissors</title>
-</head>
-<body>  
-  
-  <p class="winnerMessage"></p>
-  <p class="playerScore"></p>
-  <p class="cpuScore"></p>
-  <p class="ties"></p>
-  
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+
+    <div class="title-box">
+      <h1 class="title-rps">
+        Rock Paper Scissors
+      </h1>
+    </div>
+
+    <div class="scores-box">
+      <div class="player">
+        <h2>Player</h2>
+        <p class="playerScore">Score: 0</p>   
+      </div>
+
+      <div class="computer">
+        <h2>Computer</h2>
+        <p class="cpuScore">Score: 0</p>
+      </div>
+    </div>
+
+    <div class="buttons-box">
+      <div class="button">      
+        <button id="rockButton"><img src="images/536-5360218_rock-paper-scissors-clipart-png-download-paper-rock.png" alt="Rock"></button>
+      </div>
+      <div class="button">
+        <button id="paperButton"><img src="images/536-5360310_transparent-rock-paper-scissors-clipart-rock-paper-scissors.png" alt="Paper"></button>
+      </div>
+      <div class="button">
+        <button id="scissorsButton"><img src="images/536-5360227_scissors-hand-rock-paper-scissors-png-clipart.png" alt="Scissors"></button>
+      </div>
+    </div>
+
+    <div class="winner-box">
+      <p class="winnerMessage">First to 5 wins. Can you beat the computer?</p>
+    </div>
+
+    <div class="reset-box">
+      <button class="resetButton">New game?</button>
+    </div>
+    
+    
+    <script src="script.js"></script>
+  </body>
 </html>
